@@ -3,6 +3,11 @@ FROM python:3.9
 WORKDIR /app/backend
 
 COPY requirements.txt /app/backend
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install Python packages from requirements file
 RUN pip install -r requirements.txt
 
 COPY . /app/backend
